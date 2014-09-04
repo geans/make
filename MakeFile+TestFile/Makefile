@@ -1,6 +1,6 @@
 # Coloque o nome do seu arquivo *.cpp em SOUCER
 # edite EXE e OBJECT caso queira
-SOUCER="jogo-cartas-war.cpp"
+SOUCER="*.cpp"
 EXE   ="a.exe"
 OBJECT="obj.o"
 
