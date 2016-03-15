@@ -1,18 +1,17 @@
-# Coloque o nome do seu arquivo *.cpp em SOUCER
-# edite EXE e OBJECT caso queira
-SOUCER="*.cpp"
-EXE   ="a.exe"
+# Procura arquivo fonte C++ mais recente (ver parâmetro -nt)
+SOURCE=`ls -nt | grep .cpp | sed 's/   / /g' | sed 's/  / /g' | cut -d' ' -f9 | head -n1`
+EXE   ="a.app"
 OBJECT="obj.o"
 
 # Compilador
 CC=g++
 
 # Opções do compilador
-CFLAGS=-c -Wall
+CFLAGS=-c -Wall -std=c++11
 
 # Teste
-TESTFILE="Testfile.sh"
-TESTFOLDER="test-folder"
+TESTFILE="testfile.sh"
+TESTFOLDER="resultados"
 
 # Regras
 all: exe clean-objects test
@@ -27,7 +26,7 @@ clean-objects:
 	rm -rf *o
 
 clean: clean-objects test-clean
-	rm $(EXE)
+	rm -f $(EXE)
 
 test:
 	./$(TESTFILE) $(EXE)
