@@ -14,7 +14,7 @@ ENTRY=$(ls -nt | grep .in | sed 's/   / /g' | sed 's/  / /g' | cut -d' ' -f9 | h
 ## Pega arquivo com extensão .out mais recente
 OUT=$(ls -nt | grep .out | sed 's/   / /g' | sed 's/  / /g' | cut -d' ' -f9 | head -n1)
 TESTFOLDER="resultados"
-OUTRESULT=$TESTFOLDER"/teste.out"
+OUTRESULT=$TESTFOLDER"/saida.out"
 OUTDIFF=$TESTFOLDER"/diff.out"
 # Fim das definições das variáveis
 
