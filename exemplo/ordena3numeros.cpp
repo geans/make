@@ -1,6 +1,6 @@
 #include <iostream>
 
-void troca(int &a, int &b){
+inline void troca(int &a, int &b){
 	int c = b; b = a; a = c;
 }
 
