@@ -6,12 +6,14 @@ Esses três arquivos possuem o mesmo nome da pasta diferenciando-os a extensão.
 
 Nesta pasta possue um programa para instalação. O que ele faz é colocar o *script* na pasta pessoal e criar um comando *ccpp*. Daí basta usar o comando da seguinte forma:
 
-`usuário@pc ~ $ ccpp nomePrograma`  
-`Criando diretório`  
-`Criando arquivos de entrada e saída`  
-`Criando arquivos fonte modelo`  
-`Criando Makefile modelo`  
-`usuário@pc ~ $`
-`usuário@pc ~ $ ls nomePrograma/`  
-`Makefile  nomePrograma.cpp  nomePrograma.in  nomePrograma.out`  
-`usuário@pc ~ $`  
+```
+usuário@pc ~ $ ccpp nomePrograma
+Criando diretório
+Criando arquivos de entrada e saída
+Criando arquivos fonte modelo
+Criando Makefile modelo
+usuário@pc ~ $
+usuário@pc ~ $ ls nomePrograma/
+Makefile  nomePrograma.cpp  nomePrograma.in  nomePrograma.out
+usuário@pc ~ $
+```
