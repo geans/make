@@ -1,0 +1,35 @@
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+
+alias findtext='find ./ -type f |xargs grep --color -Hn' # find text into files
+alias okbash='source ~/.bashrc'
+alias mybash='vim ~/.bashrc; source ~/.bashrc'
+alias gpp=g++
+alias cx='chmod +x'
+
+
+# To work with development Android
+
+#export OUT_DIR_COMMON_BASE=~/android_compiled
+export USE_CCACHE=1
+export CCACHE_DIR=~/ccache/.ccache
+
+MYPATH=~/Android/Sdk/platform-tools
+MYPATH=$MYPATH:~/Android/Sdk/build-tools/30.0.3
+PATH=$PATH:$MYPATH
+
+alias gppdroid='arm-linux-gnueabi-g++ -static'
+alias gccdroid='aarch64-linux-gnu-gcc -static'
+function pushdroid {
+    adb push $1 /data/local/tmp/
+}
+function findapk {  # $1 = part of apk name
+	pkg_name=$(adb shell pm list packages | egrep $1)
+	path_apk=$(adb shell pm path ${pkg_name#*:})
+	echo $pkg_name
+	echo $path_apk
+}
+function getapk {  # $1 = part of apk name
+	pkg_name=$(adb shell pm list packages | egrep $1)
+	path_apk=$(adb shell pm path ${pkg_name#*:})
+	adb pull ${path_apk#*:}
+}
